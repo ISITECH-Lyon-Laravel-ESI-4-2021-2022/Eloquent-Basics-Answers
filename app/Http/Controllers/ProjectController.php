@@ -53,6 +53,30 @@ class ProjectController extends Controller
         $project->name = $request->name;
         $project->save();
 
+        /*
+         * ❯ sail php artisan make:observer --help
+Description:
+  Create a new observer class
+
+Usage:
+  make:observer [options] [--] <name>
+
+Arguments:
+  name                  The name of the class
+
+Options:
+  -m, --model[=MODEL]   The model that the observer applies to.
+  -h, --help            Display help for the given command. When no command is given display help for the list command
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --env[=ENV]       The environment the command should run under
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+         */
+
+        // sail php artisan make:observer -m Project ProjectObserver
+
         return redirect('/')->with('success', 'Project created');
     }
 
